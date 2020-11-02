@@ -1,0 +1,56 @@
+.header {
+  height: 120px;
+  background-color: rgb(35, 56, 153);
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left{
+  height: 40px;
+  width: 250px;
+}
+
+.header-left a{
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: orange;
+  text-decoration: none;
+}
+
+.header-right {
+  height: 40px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.header-user-name a{
+  text-decoration: none;
+  color: orange;
+}
+
+.sign-out-btn {
+  padding-left: 10px;
+}
+
+.sign-out-btn a{
+  text-decoration: none;
+  color: orange;
+}
+
+.sign-in-btn a{
+  text-decoration: none;
+  color: orange;
+}
+
+.registration-btn {
+  padding-left: 10px;
+  }
+
+.registration-btn a{
+  text-decoration: none;
+  color: orange;
+}
