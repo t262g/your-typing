@@ -1,1 +1,7 @@
-<div class ="quiz-menu"></div>
+<div class ="wrapper">
+  <% if user_signed_in? %>
+    <div class="create-btn">
+      <%= link_to "クイズを作る", new_quiz_path %>
+    </div>
+  <% end %>
+</div>
