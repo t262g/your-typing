@@ -1,24 +1,38 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column   | Type   | Options                   |
+| -------- | ------ | ------------------------- |
+| nickname | string | null: false               |
+| email    | string | null: false, unique: true |
+| password | string | null: false               |
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :titles
 
-* Configuration
+## titles テーブル
 
-* Database creation
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| quiz_title  | string     | null: false                    |
+| explanation | text       | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :quizzes
 
-* Services (job queues, cache servers, search engines, etc.)
+## quizzes テーブル
 
-* Deployment instructions
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| question | text       | null: false                    |
+| answer   | string     | null: false                    |
+| title    | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :title
