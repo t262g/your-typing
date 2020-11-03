@@ -1,0 +1,78 @@
+<div class="wrapper">
+  <%= form_with model: @quiz_management, url: quizzes_path, local: true do |f| %>
+    <div class="quiz-form">
+      <div class="error-message">
+        <%= render "shared/error_messages", resource: f.object %>
+      </div>
+      <p class="title">クイズ新規登録</p>
+      <div class="quiz-set">
+        <div class="quiz-input">
+          <%= f.label :title, "クイズのタイトル", class: "quiz-label" %>
+          <%= f.text_field :title, class: "quiz-field", placeholder:"例) 英単語クイズ", autofocus: true %>
+        </div>
+        <div class="quiz-input">
+          <%= f.label :explanation, "クイズの説明", class: "quiz-label" %>
+          <%= f.text_area :explanation, class: "quiz-area", placeholder:"例) 日本語を英語に直しましょう"%>
+        </div>
+      </div>
+      <div class="quiz-set">
+        <div class="quiz-input">
+          <%= f.label :question1, "問題", class: "quiz-label" %>
+          <%= f.text_area :question1, class: "quiz-area", placeholder:"例) ゾウ" %>
+        </div>
+        <div class="quiz-input">
+          <%= f.label :answer1, "答え", class: "quiz-label" %>
+          <%= f.text_field :answer1, class: "quiz-field", placeholder:"例) elephant" %>
+        </div>
+      </div>
+      <div class="quiz-set">
+        <div class="quiz-input">
+          <%= f.label :question2, "問題", class: "quiz-label" %>
+          <%= f.text_area :question2, class: "quiz-area", placeholder:"例) ゾウ" %>
+        </div>
+        <div class="quiz-input">
+          <%= f.label :answer2, "答え", class: "quiz-label" %>
+          <%= f.text_field :answer2, class: "quiz-field", placeholder:"例) elephant" %>
+        </div>
+      </div>
+      <div class="quiz-set">
+        <div class="quiz-input">
+          <%= f.label :question3, "問題", class: "quiz-label" %>
+          <%= f.text_area :question3, class: "quiz-area", placeholder:"例) ゾウ" %>
+        </div>
+        <div class="quiz-input">
+          <%= f.label :answer3, "答え", class: "quiz-label" %>
+          <%= f.text_field :answer3, class: "quiz-field", placeholder:"例) elephant" %>
+        </div>
+      </div>
+      <div class="quiz-set">
+        <div class="quiz-input">
+          <%= f.label :question4, "問題", class: "quiz-label" %>
+          <%= f.text_area :question4, class: "quiz-area", placeholder:"例) ゾウ" %>
+        </div>
+        <div class="quiz-input">
+          <%= f.label :answer4, "答え", class: "quiz-label" %>
+          <%= f.text_field :answer4, class: "quiz-field", placeholder:"例) elephant" %>
+        </div>        
+      </div>
+      <div class="quiz-set">
+        <div class="quiz-input">
+          <%= f.label :question5, "問題", class: "quiz-label" %>
+          <%= f.text_area :question5, class: "quiz-area", placeholder:"例) ゾウ" %>
+        </div>
+        <div class="quiz-input">
+          <%= f.label :answer5, "答え", class: "quiz-label" %>
+          <%= f.text_field :answer5, class: "quiz-field", placeholder:"例) elephant" %>
+        </div>
+      </div>
+      <div class="btns", id="btns">
+        <div class="increase-btn", id="increase">
+          問題数を増やす
+        </div>
+        <div class="submit-btn">
+          <%= f.submit "クイズ登録" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
