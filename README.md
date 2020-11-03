@@ -10,29 +10,29 @@
 
 ### Association
 
-- has_many :titles
+- has_many :quizzes
 
-## titles テーブル
+## quizzes テーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| quiz_title  | string     | null: false                    |
+| title       | string     | null: false                    |
 | explanation | text       | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_many :quizzes
+- has_many :quiz_lists
 
-## quizzes テーブル
+## quiz_lists テーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | question | text       | null: false                    |
 | answer   | string     | null: false                    |
-| title    | references | null: false, foreign_key: true |
+| quiz     | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :title
+- belongs_to :quiz
