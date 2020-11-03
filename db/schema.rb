@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_061414) do
+ActiveRecord::Schema.define(version: 2020_11_03_062135) do
+
+  create_table "quiz_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "question", null: false
+    t.string "answer", null: false
+    t.bigint "quiz_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quiz_id"], name: "index_quiz_lists_on_quiz_id"
+  end
 
   create_table "quizzes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -34,5 +43,6 @@ ActiveRecord::Schema.define(version: 2020_11_03_061414) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "quiz_lists", "quizzes"
   add_foreign_key "quizzes", "users"
 end
