@@ -2,7 +2,7 @@
   <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
     <div class="form">
       <div class="error-message">
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render "shared/error_messages", resource: resource %>
       </div>
       <p class="title">新規登録</p>
       <div class="user-input">
@@ -11,7 +11,7 @@
       </div>
       <div class="user-input">
         <%= f.label :email, "メールアドレス", class: "user-label" %>
-        <%= f.email_field :email,class: "user-field", placeholder:"PC・携帯どちらでも可"%>
+        <%= f.email_field :email, class: "user-field", placeholder:"PC・携帯どちらでも可"%>
       </div>
       <div class="user-input">
         <%= f.label :password, "パスワード", class: "user-label" %>
