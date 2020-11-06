@@ -13,7 +13,7 @@ RSpec.describe QuizManagement, type: :model do
 
       it 'クイズが4問以上入力されているときも作成できる' do
         100.times do
-          new_quiz_set = {question: Faker::Lorem.word, answer: Faker::Lorem.word}
+          new_quiz_set = { question: Faker::Lorem.word, answer: Faker::Lorem.word }
           @quiz_management.quiz_sets << new_quiz_set
         end
         expect(@quiz_management).to be_valid
@@ -34,15 +34,15 @@ RSpec.describe QuizManagement, type: :model do
       end
 
       it 'クイズが3セット未満である' do
-        @quiz_management.quiz_sets.shift()
+        @quiz_management.quiz_sets.shift
         @quiz_management.valid?
-        expect(@quiz_management.errors.full_messages).to include "Quiz sets is too short (minimum is 3 characters)"
+        expect(@quiz_management.errors.full_messages).to include 'Quiz sets is too short (minimum is 3 characters)'
       end
 
       it 'クイズが1問も入力されていない' do
         @quiz_management.quiz_sets = []
         @quiz_management.valid?
-        expect(@quiz_management.errors.full_messages).to include "Quiz sets is too short (minimum is 3 characters)"
+        expect(@quiz_management.errors.full_messages).to include 'Quiz sets is too short (minimum is 3 characters)'
       end
 
       it 'クイズにユーザーが紐づいていない' do

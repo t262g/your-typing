@@ -22,11 +22,9 @@ class QuizzesController < ApplicationController
 
   def create_quiz_sets
     i = 0
-    while params[:quiz_management]["#{i}"]
-      quiz_set = params[:quiz_management]["#{i}"].permit(:question, :answer).to_h
-      if !(quiz_set[:question].blank?) && !(quiz_set[:answer].blank?)
-        @quiz_sets << quiz_set
-      end
+    while params[:quiz_management][i.to_s]
+      quiz_set = params[:quiz_management][i.to_s].permit(:question, :answer).to_h
+      @quiz_sets << quiz_set if !quiz_set[:question].blank? && !quiz_set[:answer].blank?
       i += 1
     end
   end
