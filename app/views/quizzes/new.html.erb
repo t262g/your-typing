@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <%= form_with model: @quiz_management, url: quizzes_path, local: true do |f| %>
+    <div class="quiz-form">
+      <div class="error-message">
+        <%= render "shared/error_messages", resource: f.object %>
+      </div>
+      <p class="title">クイズ新規登録</p>
+      <ul class="explanation-list">
+        <li>・問題と答えを両方セットで記入してください</li>
+        <li>・最低3セットが必要になります</li>
+        <li>・問題数を6セット以上にしたいときは下のボタンを押してください</li>
+      </ul>
+      <div class="quiz-set">
+        <div class="quiz-input">
+          <%= f.label :title, "クイズのタイトル", class: "quiz-label" %>
+          <%= f.text_field :title, class: "quiz-field", placeholder:"例) 英単語クイズ", autofocus: true %>
+        </div>
+        <div class="quiz-input">
+          <%= f.label :explanation, "クイズの説明", class: "quiz-label" %>
+          <%= f.text_area :explanation, class: "quiz-area", placeholder:"例) 日本語を英語に直しましょう"%>
+        </div>
+      </div>
+      <% 5.times do |i| %>
+        <div class="quiz-set">
+          <div class="quiz-input">
+            <%= f.label :question, "問題", class: "quiz-label" %>
+            <%= f.text_area :question, index: i, class: "quiz-area", placeholder:"例) ゾウ" %>
+          </div>
+          <div class="quiz-input">
+            <%= f.label :answer, "答え", class: "quiz-label" %>
+            <%= f.text_field :answer, index: i, class: "quiz-field", placeholder:"例) elephant" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="buttons", id="buttons">
+        <div class="increase-btn", id="increase">
+          問題数を増やす
+        </div>
+        <div class="submit-btn">
+          <%= f.submit "クイズ登録" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
   describe 'ユーザー新規登録' do
     before do
       @user = FactoryBot.build(:user)
@@ -27,9 +26,9 @@ RSpec.describe User, type: :model do
       end
 
       it 'emailに@が含まれていないとき' do
-        @user.email = "testaddress"
+        @user.email = 'testaddress'
         @user.valid?
-        expect(@user.errors.full_messages).to include "Email is invalid"
+        expect(@user.errors.full_messages).to include 'Email is invalid'
       end
 
       it 'emailが既に使われているとき' do
@@ -37,7 +36,7 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include "Email has already been taken"
+        expect(another_user.errors.full_messages).to include 'Email has already been taken'
       end
 
       it 'passwordが空のとき' do
@@ -47,25 +46,23 @@ RSpec.describe User, type: :model do
       end
 
       it 'passwordが6文字未満のとき' do
-        @user.password = "12345"
+        @user.password = '12345'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
+        expect(@user.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
       end
 
       it 'password_confirmationが空のとき' do
-        @user.password_confirmation = ""
+        @user.password_confirmation = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
       end
 
       it 'passwordとpassword_confirmationが一致しないとき' do
-        @user.password_confirmation = @user.password + "a"
+        @user.password_confirmation = "#{@user.password}a"
         @user.valid?
         expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
       end
     end
-    
   end
-
 end
