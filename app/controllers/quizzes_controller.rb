@@ -29,10 +29,6 @@ class QuizzesController < ApplicationController
       end
       i += 1
     end
-
-    if @quiz_sets.length < 3
-      @quiz_sets = nil
-    end
   end
 
   def quiz_params

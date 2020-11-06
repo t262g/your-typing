@@ -5,9 +5,10 @@ class QuizManagement
   with_options presence: true do
     validates :title
     validates :explanation
-    validates :quiz_sets
     validates :user_id
   end
+
+  validates :quiz_sets, length: {minimum: 3}
 
   def save
     quiz = Quiz.create(title: title, explanation: explanation, user_id: user_id)
