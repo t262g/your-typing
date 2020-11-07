@@ -1,0 +1,42 @@
+.create-btn a{
+  padding: 10px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  background-color: rgb(168, 8, 231);
+  border-radius: 10px;
+  border: 1px solid black;
+  color: white;
+  text-decoration: none;
+}
+
+.quiz {
+  margin: 10px;
+  background-color: rgb(245, 243, 243);
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+}
+
+.quiz-index {
+  padding: 15px;
+}
+
+.quiz-title {
+  font-size: 17px;
+}
+
+.quiz-user {
+  padding-left: 10px;
+}
+
+.quiz-explanation {
+  padding: 10px;
+}
+
+.play-quiz a {
+  text-decoration: none;
+  color: rgb(255, 136, 0);
+}
