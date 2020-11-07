@@ -4,4 +4,26 @@
       <%= link_to "クイズを作る", new_quiz_path %>
     </div>
   <% end %>
+  <% if @quizzes != [] %>
+    <div class="quiz-index">
+      <% @quizzes.each do |quiz| %>
+        <div class="quiz">
+          <div class="quiz-header">
+            <div class="quiz-title">
+              <%= quiz.title %>
+            </div>
+            <div class="quiz-user">
+              <%= "作成者 #{quiz.user.nickname}" %>
+            </div>
+          </div>
+          <div class="quiz-explanation">
+            <%= quiz.explanation %>
+          </div>
+          <div class="play-quiz">
+            <%= link_to "このクイズをプレイする","#" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
