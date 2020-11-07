@@ -1,5 +1,6 @@
 class QuizzesController < ApplicationController
   def index
+    @quizzes = Quiz.includes(:user).order('created_at DESC')
   end
 
   def new
