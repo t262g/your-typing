@@ -19,6 +19,12 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def show
+    @quiz = Quiz.find(params[:id])
+    quiz_lists = @quiz.quiz_list
+    @json_quiz = quiz_lists.to_json
+  end
+
   private
 
   def create_quiz_sets

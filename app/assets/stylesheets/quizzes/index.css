@@ -3,7 +3,7 @@
   width: 100px;
   height: 40px;
   font-size: 16px;
-  background-color: rgb(168, 8, 231);
+  background-color: rgb(231, 216, 8);
   border-radius: 10px;
   border: 1px solid black;
   color: white;
@@ -12,7 +12,9 @@
 
 .quiz {
   margin: 10px;
-  background-color: rgb(245, 243, 243);
+  background-color: rgb(65, 206, 88);
+  border-radius: 25px;
+  padding: 10px;
 }
 
 .quiz-header {
@@ -26,6 +28,7 @@
 
 .quiz-title {
   font-size: 17px;
+  border-radius: 20px;
 }
 
 .quiz-user {
@@ -34,9 +37,12 @@
 
 .quiz-explanation {
   padding: 10px;
+  color: black;
 }
 
 .play-quiz a {
   text-decoration: none;
-  color: rgb(255, 136, 0);
+  color: rgb(247, 0, 255);
+  font-size: 16px;
+  padding-left: 20px;
 }

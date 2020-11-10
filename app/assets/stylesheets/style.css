@@ -1,6 +1,7 @@
 .wrapper {
   background-color: rgb(224, 241, 241);
   padding: 60px;
+  font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
 }
 
 .error-message {
