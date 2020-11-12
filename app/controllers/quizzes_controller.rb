@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :identify_user, only: :edit
-  before_action :find_quiz, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :identify_user, only: [:edit, :destroy]
+  before_action :find_quiz, only: [:show, :edit, :update, :destroy]
 
   def index
     @quizzes = Quiz.includes(:user).order('created_at DESC')
@@ -38,6 +38,11 @@ class QuizzesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @quiz.destroy
+    redirect_to root_path
   end
 
   private
