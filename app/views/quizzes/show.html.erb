@@ -19,6 +19,7 @@
       <%= link_to 'トップページに戻る', root_path %>
       <% if user_signed_in? && @quiz.user == current_user %>
         <%= link_to 'このクイズを編集する', edit_quiz_path(@quiz) %>
+        <%= link_to 'このクイズを削除する', quiz_path(@quiz), method: :delete %>
       <% end %>
   </div>
   </div>
