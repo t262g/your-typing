@@ -13,25 +13,27 @@
       <div class="quiz-set">
         <div class="quiz-input">
           <%= f.label :title, "クイズのタイトル", class: "quiz-label" %>
-          <%= f.text_field :title, class: "quiz-field", placeholder:"例) 英単語クイズ", autofocus: true %>
+          <%= f.text_field :title, class: "quiz-field", placeholder: "例) 英単語クイズ", autofocus: true %>
         </div>
         <div class="quiz-input">
           <%= f.label :explanation, "クイズの説明", class: "quiz-label" %>
-          <%= f.text_area :explanation, class: "quiz-area", placeholder:"例) 日本語を英語に直しましょう"%>
+          <%= f.text_area :explanation, class: "quiz-area", placeholder: "例) 日本語を英語に直しましょう" %>
         </div>
       </div>
-      <% 5.times do |i| %>
-        <div class="quiz-set">
-          <div class="quiz-input">
-            <%= f.label :question, "問題", class: "quiz-label" %>
-            <%= f.text_area :question, index: i, class: "quiz-area", placeholder:"例) ゾウ" %>
+      <div id="all_quiz">
+        <% 5.times do |i| %>
+          <div class="quiz-set">
+            <div class="quiz-input">
+              <%= f.label :question, "問題", class: "quiz-label" %>
+              <%= f.text_area :question, index: i, class: "quiz-area", placeholder: "例) ゾウ" %>
+            </div>
+            <div class="quiz-input">
+              <%= f.label :answer, "答え", class: "quiz-label" %>
+              <%= f.text_field :answer, index: i, class: "quiz-field", placeholder: "例) elephant" %>
+            </div>
           </div>
-          <div class="quiz-input">
-            <%= f.label :answer, "答え", class: "quiz-label" %>
-            <%= f.text_field :answer, index: i, class: "quiz-field", placeholder:"例) elephant" %>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
       <div class="buttons", id="buttons">
         <div class="increase-btn", id="increase">
           問題数を増やす
