@@ -3,22 +3,23 @@
     <div class="quiz-title">
       <%= @quiz.title %>
     </div>
-    <%# <div class="quiz-sub-wrapper"> %>
-      <div class="quiz-explanation">
-        <%= @quiz.explanation %>
+    <div class="quiz-explanation">
+      <%= @quiz.explanation %>
+    </div>
+    <div class="quiz-main">
+      <input id="json_quiz" type="hidden" value=<%= @json_quiz %>>
+      <div class="question-area">
+        <div class="question" id="question"></div>
       </div>
-      <div class="quiz-main">
-        <input id="json_quiz" type="hidden" value=<%= @json_quiz %>>
-        <div class="question-area">
-          <div class="question" id="question"></div>
-        </div>
-        <div class="answer-area">
-          <input id="answer" autofocus=true >
-        </div>
+      <div class="answer-area">
+        <input id="answer" autofocus=true >
       </div>
     </div>
     <div class="top-link">
       <%= link_to 'トップページに戻る', root_path %>
+      <% if user_signed_in? && @quiz.user == current_user %>
+        <%= link_to 'このクイズを編集する', edit_quiz_path(@quiz) %>
+      <% end %>
   </div>
   </div>
 

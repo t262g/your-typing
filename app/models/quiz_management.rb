@@ -16,4 +16,12 @@ class QuizManagement
       QuizList.create(question: quiz_set[:question], answer: quiz_set[:answer], quiz_id: quiz.id)
     end
   end
+
+  def update(quiz)
+    quiz.update(title: title, explanation: explanation, user_id: user_id)
+    quiz.quiz_lists.each(&:destroy)
+    quiz_sets.each do |quiz_set|
+      QuizList.create(question: quiz_set[:question], answer: quiz_set[:answer], quiz_id: quiz.id)
+    end
+  end
 end
