@@ -7,16 +7,16 @@
       <% @quizzes.each do |quiz| %>
         <div class="quiz">
           <div class="quiz-header">
-            <div class="quiz-title">
+            <div class="index-quiz-title">
               <%= quiz.title %>
             </div>
           </div>
-          <div class="quiz-explanation">
+          <div class="index-quiz-explanation">
             <%= quiz.explanation %>
           </div>
           <div class="quiz-links">
             <div class="play-quiz">
-              <%= link_to "クイズをプレイする", quiz_path(quiz) %>
+              <%= link_to "Play", quiz_path(quiz) %>
             </div>
             <% if user_signed_in? && @user == current_user %>
               <div class="edit-quiz">
