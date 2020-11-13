@@ -14,15 +14,17 @@
           <div class="quiz-explanation">
             <%= quiz.explanation %>
           </div>
-          <div class="play-quiz">
-            <%= link_to "クイズをプレイする", quiz_path(quiz) %>
-          </div>
-          <% if user_signed_in? && @user == current_user %>
-            <div class="edit-quiz">
-              <%= link_to 'クイズを編集する', edit_quiz_path(quiz) %>
-              <%= link_to 'クイズを削除する', quiz_path(quiz), method: :delete %>
+          <div class="quiz-links">
+            <div class="play-quiz">
+              <%= link_to "クイズをプレイする", quiz_path(quiz) %>
             </div>
-          <% end %>
+            <% if user_signed_in? && @user == current_user %>
+              <div class="edit-quiz">
+                <%= link_to 'クイズを編集する', edit_quiz_path(quiz) %>
+                <%= link_to 'クイズを削除する', quiz_path(quiz), method: :delete %>
+              </div>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
