@@ -36,8 +36,17 @@
   width: 100px;
   height: 40px;
   font-size: 16px;
+  color: white;
   background-color: orange;
   border-radius: 10px;
+  border: none;
+  box-shadow: 0 3px darkgoldenrod;
+}
+
+.submit-btn input:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
 }
 
 .user-page-title {

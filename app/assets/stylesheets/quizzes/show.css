@@ -10,27 +10,31 @@
 .quiz-title {
   font-size: 22px;
   color: aqua;
-  width: 400px;
+  width: 70%;
   height: 40px;
   background-color: darkblue;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .quiz-explanation {
+
   text-align: center;
   font-size: 16px;
   color: rgb(253, 253, 31);
+  padding: 5px;
 }
 
 .quiz-main {
   background-color: rgb(179, 243, 245);
+  width: 80%;
   text-align: center;
 }
 
 .question-area {
-  width: 500px;
+  margin: 10px 30px;
   height: 120px;
   display: flex;
   justify-content: center;
@@ -42,10 +46,25 @@
 }
 .answer-area {
   height: 30px;
+  border: 4 solid black;
+}
+
+.top-link {
+  margin: 10px;
+  padding: 5px;
 }
 
 .top-link a{
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 15px;
+  padding: 5px;
+  background-color: tomato;
+  border-radius: 7px;
+  box-shadow: 0 3px rgb(197, 77, 56);
+}
+.top-link a:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
 }
