@@ -1,9 +1,7 @@
 <div class ="wrapper">
-  <% if user_signed_in? %>
-    <div class="create-btn">
-      <%= link_to "クイズを作る", new_quiz_path %>
-    </div>
-  <% end %>
+  <div class="user-page-title">
+  <h1><%= "#{@user.nickname}さんのページ" %></h1>
+  </div>
   <% if @quizzes != [] %>
     <div class="quiz-index">
       <% @quizzes.each do |quiz| %>
@@ -12,9 +10,6 @@
             <div class="quiz-title">
               <%= quiz.title %>
             </div>
-            <div class="quiz-user">
-              <%= link_to "作成者: #{quiz.user.nickname}", user_path(quiz.user) %>
-            </div>
           </div>
           <div class="quiz-explanation">
             <%= quiz.explanation %>
@@ -22,7 +17,7 @@
           <div class="play-quiz">
             <%= link_to "クイズをプレイする", quiz_path(quiz) %>
           </div>
-          <% if user_signed_in? && quiz.user == current_user %>
+          <% if user_signed_in? && @user == current_user %>
             <div class="edit-quiz">
               <%= link_to 'クイズを編集する', edit_quiz_path(quiz) %>
               <%= link_to 'クイズを削除する', quiz_path(quiz), method: :delete %>
