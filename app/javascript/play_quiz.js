@@ -9,9 +9,7 @@ if (document.URL.match( /quizzes.+\d$/ )) {
   }
 
   function judge () {
-    console.log(`quiz${i}実行中`);
     if (quizSet.answer === answer.value) {  
-      console.log(`問題${i}正解です`);
       i++;
 
       if (length == i) {
@@ -30,7 +28,6 @@ if (document.URL.match( /quizzes.+\d$/ )) {
   }
 
   function play () {
-    console.log('playQuizが呼ばれました')
     const quizValue = json_quiz.value
     lists = JSON.parse(quizValue);
     length = lists.length;
