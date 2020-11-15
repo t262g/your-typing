@@ -11,6 +11,7 @@
 ### Association
 
 - has_many :quizzes
+- has_many :comments
 
 ## quizzes テーブル
 
@@ -24,6 +25,7 @@
 
 - belongs_to :user
 - has_many :quiz_lists
+- has_many :comments
 
 ## quiz_lists テーブル
 
@@ -35,4 +37,17 @@
 
 ### Association
 
+- belongs_to :quiz
+
+## comments テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| quiz    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
 - belongs_to :quiz
