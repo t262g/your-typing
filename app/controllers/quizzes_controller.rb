@@ -22,6 +22,8 @@ class QuizzesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @quiz.comments.includes(:user)
     @json_quiz = @quiz_lists.to_json
   end
 
