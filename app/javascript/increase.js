@@ -10,11 +10,11 @@ if ( document.URL.match( /quizzes\/new/ ) || document.URL.match( /quizzes\/\d.*\
         <div class="quiz-set">
           <div class="quiz-input">
             <label class="quiz-label" for="quiz_management_question">問題</label>
-            <textarea class="quiz-area" placeholder="例) ゾウ" name="quiz_management[${index}][question]" id="quiz_management_${index}_question"></textarea>
+            <textarea class="quiz-area" placeholder="例) 英語" name="quiz_management[${index}][question]" id="quiz_management_${index}_question"></textarea>
           </div>
           <div class="quiz-input">
             <label class="quiz-label" for="quiz_management_answer">答え</label>
-            <input class="quiz-field" placeholder="例) elephant" type="text" name="quiz_management[${index}][answer]" id="quiz_management_${index}_answer" />
+            <input class="quiz-field" placeholder="例) english" type="text" name="quiz_management[${index}][answer]" id="quiz_management_${index}_answer" />
           </div>
         </div>`;
       place.insertAdjacentHTML("beforeend", HTML);
