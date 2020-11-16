@@ -23,8 +23,9 @@ class QuizzesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @quiz.comments.includes(:user)
+    @comments = @quiz.comments.includes(:user).order('created_at DESC')
     @json_quiz = @quiz_lists.to_json
+    @json_info = [current_user.nickname, @quiz.id].to_json if user_signed_in?
   end
 
   def edit

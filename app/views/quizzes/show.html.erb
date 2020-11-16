@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="quiz-wrapper">
+    <input id="json_quiz" type="hidden" value=<%= @json_quiz %>>
     <div class="quiz-title">
       <%= @quiz.title %>
     </div>
@@ -7,7 +8,6 @@
       <%= @quiz.explanation %>
     </div>
     <div class="quiz-main">
-      <input id="json_quiz" type="hidden" value=<%= @json_quiz %>>
       <div class="question-area">
         <div class="question" id="question"></div>
       </div>
@@ -21,7 +21,8 @@
   </div>
   <div class="comment-wrapper">
     <% if user_signed_in? %>
-      <%= form_with model: [@quiz, @comment], class: "comment-form", local: true do |f| %>
+      <input id="json_info" type="hidden" value=<%= @json_info %>>
+      <%= form_with model: [@quiz, @comment], class: "comment-form", local: true, id: "new_comment" do |f| %>
         <div class="comment-field">
           <div class="error-message">
             <%= render "shared/error_messages", resource: f.object %>
@@ -30,13 +31,13 @@
           <%= f.text_area :content %>
         </div>
         <div class="comment-submit">
-          <%= f.submit "コメント記入" %>
+          <%= f.submit "コメント記入", id: "submit_btn" %>
         </div>
       <% end %>
-    <% end %>
-    <% if @quiz.comments != [] %>
-      <div class="comment-list">
-        <% @quiz.comments.each do |comment| %>
+    <% end %>  
+    <div class="comment-list" id="comment_list">
+      <% if @comments != [] %>
+        <% @comments.each do |comment| %>
           <% if comment.content != "" %>
             <div class="comment">
               <%= link_to comment.user.nickname, user_path(comment.user) %>
@@ -46,7 +47,7 @@
             </div>
           <% end %>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>   
   </div>
 </div>
