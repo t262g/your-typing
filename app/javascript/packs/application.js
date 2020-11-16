@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../increase")
 require("../play_quiz")
+require("../post_comment")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
