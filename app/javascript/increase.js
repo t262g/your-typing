@@ -1,4 +1,5 @@
-if (document.URL.match( /quizzes.*new/ ) || document.URL.match( /quizzes.*edit/ )) {
+if ( document.URL.match( /quizzes\/new/ ) || document.URL.match( /quizzes\/\d.*\/edit/ )
+ || document.referrer.match( /quizzes\/new/ ) || document.referrer.match( /quizzes\/\d.*\/edit/ ) ) {
 
   function increase () {
     const place = document.getElementById("all_quiz");
