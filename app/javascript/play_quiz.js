@@ -1,34 +1,33 @@
-if (document.URL.match( /quizzes.+\d$/ )) {
+function initialize () {
+  question.innerHTML = '';
+  answer.value = '';
+  quizSet = lists[i]
+  const HTML = `${quizSet.question}`;
+  question.insertAdjacentHTML('afterbegin', HTML);
+}
 
-  function initialize () {
-    question.innerHTML = '';
-    answer.value = '';
-    quizSet = lists[i]
-    const HTML = `${quizSet.question}`;
-    question.insertAdjacentHTML('afterbegin', HTML);
-  }
+function judge () {
+  if (quizSet.answer === answer.value) {  
+    i++;
 
-  function judge () {
-    if (quizSet.answer === answer.value) {  
-      i++;
-
-      if (length == i) {
-        clearInterval(time);
-        result();
-        return;
-      }
-
-      initialize();
+    if (length == i) {
+      clearInterval(time);
+      result();
+      return;
     }
-  }
 
-  function result () {
-    question.innerHTML = 'クイズ終了です';
-    answer.value = '';
+    initialize();
   }
+}
 
-  function play () {
-    const quizValue = json_quiz.value
+function result () {
+  question.innerHTML = 'クイズ終了です';
+  answer.value = '';
+}
+
+function play () {
+  const quizValue = json_quiz.value
+  if (quizValue != null) {
     lists = JSON.parse(quizValue);
     length = lists.length;
     question = document.getElementById('question');
@@ -39,7 +38,6 @@ if (document.URL.match( /quizzes.+\d$/ )) {
 
     time = setInterval(judge, 300);
   }
-
-  window.addEventListener('load', play);
-
 }
+
+window.addEventListener('load', play);
