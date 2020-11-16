@@ -26,8 +26,9 @@ function result () {
 }
 
 function play () {
-  const quizValue = json_quiz.value
-  if (quizValue != null) {
+  const json = document.getElementById('json_quiz');
+  if ( json != null) {
+    const quizValue = json.value
     lists = JSON.parse(quizValue);
     length = lists.length;
     question = document.getElementById('question');
