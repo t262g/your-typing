@@ -1,10 +1,9 @@
-if ( document.URL.match( /quizzes\/new/ ) || document.URL.match( /quizzes\/\d.*\/edit/ )
- || document.referrer.match( /quizzes\/new/ ) || document.referrer.match( /quizzes\/\d.*\/edit/ ) ) {
+function increase () {
+  const btn = document.getElementById('increase');
 
-  function increase () {
+  if (btn != null) {
     const place = document.getElementById("all_quiz");
     let index = place.childElementCount;
-    const btn = document.getElementById('increase');
     btn.addEventListener('click', () => {
       const HTML = `        
         <div class="quiz-set">
@@ -21,7 +20,6 @@ if ( document.URL.match( /quizzes\/new/ ) || document.URL.match( /quizzes\/\d.*\
       index += 1;
     });
   }
-
-  window.addEventListener('load', increase);
-
 }
+
+window.addEventListener('load', increase);
