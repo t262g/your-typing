@@ -41,7 +41,7 @@ function reset (lists, index) {
   //回答欄のリセット
   const answerArea = document.getElementById("answer_area");
   answerArea.innerHTML = '';
-  answerArea.innerHTML = '<input id="answer"></input>';
+  answerArea.innerHTML = '<input id="answer">';
   const answer = document.getElementById('answer');
   answer.focus();
 }
