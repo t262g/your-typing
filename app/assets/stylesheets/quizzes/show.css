@@ -39,11 +39,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.question {
   font-size: 24px;
 }
+
 .answer-area {
   height: 30px;
   border: 4 solid black;
