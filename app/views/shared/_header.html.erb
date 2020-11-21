@@ -5,6 +5,9 @@
   <% unless devise_controller? %>
     <div class="header-right">
       <% if user_signed_in? %>
+        <div class="header-user-image">
+          <%= user_image_link(current_user, 30) %>
+        </div>
         <div class="header-user-name">
           <%= link_to current_user.nickname, user_path(current_user) %>
         </div>

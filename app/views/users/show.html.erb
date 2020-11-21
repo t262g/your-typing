@@ -1,6 +1,6 @@
 <div class ="wrapper">
   <div class="user-page-title">
-  <h1><%= "#{@user.nickname}さんのページ" %></h1>
+  <h1><%= user_image_link(@user, 40) %> <%= "#{@user.nickname}さんのページ" %></h1>
   </div>
   <% if @quizzes != [] %>
     <div class="quiz-index">
