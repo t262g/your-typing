@@ -39,6 +39,7 @@
         <% @comments.each do |comment| %>
           <% if comment.content != "" %>
             <div class="comment">
+              <%= user_image_link(comment.user, 17) %>
               <%= link_to comment.user.nickname, user_path(comment.user) %>
               <div class="comment-content">
                 <%= comment.content %>
