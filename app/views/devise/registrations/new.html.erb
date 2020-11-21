@@ -21,6 +21,10 @@
         <%= f.label :password_confirmation, "パスワード(確認用)", class: "user-label" %>
         <%= f.password_field :password_confirmation, class: "user-field", placeholder:"もう一度入力" %>
       </div>
+      <div class="user-input">
+        <%= f.label :image, "ユーザーアイコン", class: "user-label" %>
+        <%= f.file_field :image %>
+      </div>
       <div class="submit-btn">
         <%= f.submit "登録" %>
       </div>
