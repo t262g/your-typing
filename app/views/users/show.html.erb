@@ -1,6 +1,9 @@
 <div class ="wrapper">
   <div class="user-page-title">
   <h1><%= user_image_link(@user, 40) %> <%= "#{@user.nickname}さんのページ" %></h1>
+  <% if @user = current_user %>
+    <%= link_to "ユーザー情報を編集する", edit_user_path, class: "user-link" %>
+  <% end %>
   </div>
   <% if @quizzes != [] %>
     <div class="quiz-index">
