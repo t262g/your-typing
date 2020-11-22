@@ -49,6 +49,11 @@
   top: 3px;
 }
 
-.user-page-title {
+.user-page-title h1{
   font-size: 20px;
+  margin: 10px;
+}
+
+.user-link{
+  padding: 6px;
 }
