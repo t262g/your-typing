@@ -105,8 +105,22 @@ https://your-typing.herokuapp.com/
 クイズへのタグ付け機能  
 クイズのタグでの絞り込み機能  
 
-# ローカルで動作させるには
-
+# ローカルで動作させる方法
+### 開発に用いた環境
+ruby 2.6.5  
+MySQL 5.6  
+Rails 6.0.0  
+Node.jsの導入  
+yarnの導入
+### Githubからのクローン後にローカルで動作させる手順
+```
+% git clone https://github.com/t262g/your-typing
+% cd your-typing
+% bundle install
+% yarn install
+% rails db:create
+% rails db:migrate
+```
 # データベース設計
 
 ## users テーブル
