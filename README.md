@@ -104,6 +104,7 @@ https://your-typing.herokuapp.com/
 クイズ一覧のページング機能  
 クイズへのタグ付け機能  
 クイズのタグでの絞り込み機能  
+クイズの検索機能  
 
 # ローカルで動作させる方法
 ### 開発に用いた環境
@@ -122,6 +123,8 @@ yarnの導入
 % rails db:migrate
 ```
 # データベース設計
+## ER図
+<img width="484" alt="スクリーンショット 2020-11-24 19 40 55" src="https://user-images.githubusercontent.com/62420846/100083991-8b768980-2e8d-11eb-8286-9ee4a68e3e88.png">　　
 
 ## users テーブル
 
