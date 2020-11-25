@@ -1,6 +1,6 @@
 # アプリケーション名
 
-Your Quiz & Typing
+**Your Quiz & Typing**
 
 ## アプリケーション概要
 
@@ -11,7 +11,8 @@ Your Quiz & Typing
 https://your-typing.herokuapp.com/
 
 ## テスト用アカウント
-
+メールアドレス: *edo@test*  
+パスワード: *edoedo*  
 ## 利用方法
 
 ログインしている場合はクイズの作成とクイズプレイおよびクイズへのコメントができます。
@@ -19,7 +20,7 @@ https://your-typing.herokuapp.com/
 
 # 目指している課題解決
 
-学習している物事に適切な一問一答形式のテキストがない学習者を対象とし、自らクイズを作って自分で利用できることを目的としました。  
+学習事項に対して適切な一問一答形式の問題を必要としている学習者を対象とし、自らクイズを作って自分で利用できることを目的としました。  
 また、他のユーザーにもクイズを公開できるようにすることで、他者から評価をもらえるようにし、学習意欲の向上を狙いました。
 
 # 要件定義
@@ -72,17 +73,30 @@ https://your-typing.herokuapp.com/
 自由な言葉でクイズを見つけることができる機能。
 
 # 実装した機能
-### ユーザー登録機能・ログイン・ログアウト機能
-### クイズ作成機能
-### クイズ一覧表示機能
-### クイズプレイ機能
-### クイズ編集機能
-### クイズ削除機能
-### ユーザー詳細表示機能
-### クイズへのコメント機能
-### コメント機能の非同期通信化
-### ユーザーアイコン登録機能
-### ユーザー情報編集機能
+## ユーザー登録機能
+[![Image from Gyazo](https://i.gyazo.com/c4db73a4933d290dc85f4aa023d5c215.gif)](https://gyazo.com/c4db73a4933d290dc85f4aa023d5c215)
+## ログイン機能
+[![Image from Gyazo](https://i.gyazo.com/9edc22127abf07726233363b3c2e7b1a.gif)](https://gyazo.com/9edc22127abf07726233363b3c2e7b1a)
+## ログアウト機能
+[![Image from Gyazo](https://i.gyazo.com/5ab021eedaa7e70a0eafe41cc16cf8e9.gif)](https://gyazo.com/5ab021eedaa7e70a0eafe41cc16cf8e9)
+## クイズ作成機能
+[![Image from Gyazo](https://i.gyazo.com/7debdba1c496d712f37b4c6bb056d3af.gif)](https://gyazo.com/7debdba1c496d712f37b4c6bb056d3af)
+## クイズ一覧表示機能
+[![Image from Gyazo](https://i.gyazo.com/5a910369acfa603aaa74802a3105e27b.png)](https://gyazo.com/5a910369acfa603aaa74802a3105e27b)
+## クイズプレイ機能
+[![Image from Gyazo](https://i.gyazo.com/b00a39ecee6ffc418a95c439d68d2757.gif)](https://gyazo.com/b00a39ecee6ffc418a95c439d68d2757)
+## クイズ編集機能
+[![Image from Gyazo](https://i.gyazo.com/e9a07fe381e3287af15980b4536aabac.gif)](https://gyazo.com/e9a07fe381e3287af15980b4536aabac)
+## クイズ削除機能
+[![Image from Gyazo](https://i.gyazo.com/6061c0d5cbc0e21903b70b8150377e15.gif)](https://gyazo.com/6061c0d5cbc0e21903b70b8150377e15)
+## ユーザー詳細表示機能
+[![Image from Gyazo](https://i.gyazo.com/e9e04ce8618ad748fc2d8426fb07b63b.gif)](https://gyazo.com/e9e04ce8618ad748fc2d8426fb07b63b)
+## クイズへのコメント機能・コメント機能の非同期通信
+[![Image from Gyazo](https://i.gyazo.com/1ac4551377d75e6eeb4e946d737492d3.gif)](https://gyazo.com/1ac4551377d75e6eeb4e946d737492d3)
+## ユーザーアイコン登録機能
+[![Image from Gyazo](https://i.gyazo.com/4a8843ef4e280bd6a882a8f96fa42b88.gif)](https://gyazo.com/4a8843ef4e280bd6a882a8f96fa42b88)
+## ユーザー情報編集機能
+[![Image from Gyazo](https://i.gyazo.com/6a7a3598d3dd487c6989e5c2b9389f46.gif)](https://gyazo.com/6a7a3598d3dd487c6989e5c2b9389f46)
 
 # 今後実装予定の機能
 
@@ -101,6 +115,7 @@ https://your-typing.herokuapp.com/
 
 # ローカルで動作させる方法
 ### 開発に用いた環境
+macOS Catalina 10.15.7  
 ruby 2.6.5  
 MySQL 5.6  
 Rails 6.0.0  
@@ -119,6 +134,7 @@ yarn
 ## ER図
 <img width="484" alt="スクリーンショット 2020-11-24 19 40 55" src="https://user-images.githubusercontent.com/62420846/100083991-8b768980-2e8d-11eb-8286-9ee4a68e3e88.png">　　
 
+usersテーブルのimageカラムはActiveStorageを用いて実装。
 ## users テーブル
 
 | Column   | Type   | Options                   |
