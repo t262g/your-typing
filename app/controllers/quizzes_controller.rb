@@ -8,15 +8,15 @@ class QuizzesController < ApplicationController
   end
 
   def new
-    @quiz_management = QuizManagement.new
+    @form = Form::QuizListCollection.new
   end
 
   def create
-    build_quiz_management
-    if @quiz_management.valid?
-      @quiz_management.save
+    @form = Form::QuizListCollection.new(quiz_list_collection_params)
+    if @form.save?
       redirect_to root_path
     else
+      flash.now[:alert] = "クイズの登録に失敗しました"
       render :new
     end
   end
@@ -29,20 +29,20 @@ class QuizzesController < ApplicationController
     @json_info = [current_user.nickname, @quiz.id].to_json if user_signed_in?
   end
 
-  def edit
-    @quiz_sets = @quiz_lists
-    @quiz_management = QuizManagement.new
-  end
+  # def edit
+  #   @quiz_sets = @quiz_lists
+  #   @quiz_management = QuizManagement.new
+  # end
 
-  def update
-    build_quiz_management
-    if @quiz_management.valid?
-      @quiz_management.update(@quiz)
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   build_quiz_management
+  #   if @quiz_management.valid?
+  #     @quiz_management.update(@quiz)
+  #     redirect_to root_path
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     @quiz.destroy
@@ -51,24 +51,28 @@ class QuizzesController < ApplicationController
 
   private
 
-  def build_quiz_management
-    @quiz_sets = []
-    create_quiz_sets
-    @quiz_management = QuizManagement.new(quiz_params)
+  def quiz_list_collection_params
+    params.require(:form_quiz_collection).permit(quiz_lists_attribute: Form::Quiz::REGISTRABLE_ATTRIBUTES)
   end
 
-  def create_quiz_sets
-    i = 0
-    while params[:quiz_management][i.to_s]
-      quiz_set = params[:quiz_management][i.to_s].permit(:question, :answer).to_h
-      @quiz_sets << quiz_set if !quiz_set[:question].blank? && !quiz_set[:answer].blank?
-      i += 1
-    end
-  end
+  # def build_quiz_management
+  #   @quiz_sets = []
+  #   create_quiz_sets
+  #   @quiz_management = QuizManagement.new(quiz_params)
+  # end
 
-  def quiz_params
-    params.require(:quiz_management).permit(:title, :explanation).merge(quiz_sets: @quiz_sets, user_id: current_user.id)
-  end
+  # def create_quiz_sets
+  #   i = 0
+  #   while params[:quiz_management][i.to_s]
+  #     quiz_set = params[:quiz_management][i.to_s].permit(:question, :answer).to_h
+  #     @quiz_sets << quiz_set if !quiz_set[:question].blank? && !quiz_set[:answer].blank?
+  #     i += 1
+  #   end
+  # end
+
+  # def quiz_params
+  #   params.require(:quiz_management).permit(:title, :explanation).merge(quiz_sets: @quiz_sets, user_id: current_user.id)
+  # end
 
   def find_quiz
     @quiz = Quiz.find(params[:id])
