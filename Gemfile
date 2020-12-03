@@ -69,3 +69,6 @@ group :production do
 end
 
 gem "aws-sdk-s3", require: false
+
+gem 'bootstrap', '~> 5.0.0.alpha3'
+gem 'jquery-rails'
