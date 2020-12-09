@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'quizzes#index'
   resources :quizzes do
     resources :comments, only: [:new, :create]
+    resources :quiz_lists, only: [:new, :create]
   end
   resources :users, only: [:show, :edit, :update]
 end
