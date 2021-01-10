@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <%= form_with model: [@quiz, @form], url: quiz_quiz_lists_path do |form| %>
+    <table class="#">
+      <thead>
+        <tr>
+          <th>問題文</th>
+          <th>解答</th>
+        </tr>
+      </thead>
+      <tbody class="#">
+        <%= form.fields_for :quiz_lists do |f| %>
+          <tr class="#">
+            <td class="#">
+              <%= f.text_area :question, class: '#' %>
+            </td>
+            <td>
+              <%= f.text_field :answer, class: '#' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="#">
+      <%= form.submit '一括登録', class: '#' %>
+    </div>
+  <% end %>
+</div>
